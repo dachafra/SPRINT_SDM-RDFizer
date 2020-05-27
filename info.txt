@@ -1,0 +1,11 @@
+
+- structure of the engine (inside docker image):
+	- app: source code
+	- mappings: rml mapping files and configurations files (config_file.ini) (shared volume with the mapping folder of the repo)
+	- results: output of the results (shared volumen with the mapping folder of the repository, it is created when docker-compose starts)
+	- data: where the data have to be located (shared volume with the data of the repo folder, it is created when docker-compose starts)
+
+- mapping folder: mappings and configurations
+	- config files: only modify name of the dataset in both places, general and dataset1 (will be the ouput of the file name, for exmaple gtfs-csv will output gtfs-csv.nt) and the mapping source (always in the form of /mapping/XXXX) 
+	- mappings: the logical sources of them must be always /data/XXXX (e.g. /data/STOPS.csv)
+	
