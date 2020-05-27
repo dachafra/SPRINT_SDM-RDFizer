@@ -2,13 +2,13 @@
 FROM python:3.5
 
 # Set the working directory to /app
-WORKDIR /data
+WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 ADD . /app
 
 # Install any needed packages specified in requirements.txt
-RUN cd /app && pip3 install --trusted-host pypi.python.org -r requirements.txt && cd /data
+RUN cd /app && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
 EXPOSE 4000

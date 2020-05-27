@@ -1,0 +1,13 @@
+version: "2"
+services:
+ sdmrdfizer:
+    container_name: rdfizer
+    image: rdfizer:latest
+    shm_size: '50gb'
+    volumes:
+      - ./data:/data
+      - ./results/:/results
+      - ./mappings:/mappings
+      - ./:/app
+    ports:
+      - 4000:4000
